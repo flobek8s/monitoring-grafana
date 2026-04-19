@@ -65,17 +65,8 @@ kube-prometheus-stack:
           gnetId: 17347
           revision: 9
           datasource: Prometheus
-
-    # Default datasource pointing to in-cluster Prometheus
-    datasources:
-      datasources.yaml:
-        apiVersion: 1
-        datasources:
-          - name: Prometheus
-            type: prometheus
-            url: http://monitoring-grafana-kube-pr-prometheus:9090
-            isDefault: true
-            access: proxy
+    
+    plugins: [] 
 
     # Tolerations for Talos nodes if needed
     tolerations: []
