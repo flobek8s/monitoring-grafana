@@ -13,7 +13,7 @@ spec:
         - name: basic-auth-prometheus   # see middleware below
           namespace: monitoring-grafana
       services:
-        - name: monitoring-kube-prometheus-prometheus
+        - name: monitoring-grafana-kube-pr-prometheus
           port: 9090
   tls:
     certResolver: wildcard-phink8s.com-tls

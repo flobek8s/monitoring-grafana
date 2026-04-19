@@ -73,7 +73,7 @@ kube-prometheus-stack:
         datasources:
           - name: Prometheus
             type: prometheus
-            url: http://monitoring-kube-prometheus-prometheus:9090
+            url: http://monitoring-grafana-kube-pr-prometheus:9090
             isDefault: true
             access: proxy
 

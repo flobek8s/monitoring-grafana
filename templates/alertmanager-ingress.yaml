@@ -13,7 +13,7 @@ spec:
         - name: basic-auth-prometheus
           namespace: monitoring-grafana
       services:
-        - name: monitoring-kube-prometheus-alertmanager
+        - name: monitoring-grafana-kube-pr-alertmanager
           port: 9093
   tls:
     certResolver: wildcard-phink8s.com-tls
