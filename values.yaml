@@ -201,6 +201,8 @@ kube-prometheus-stack:
   # ── CRDs ─────────────────────────────────────────────────────────────────
   crds:
     enabled: true
+    upgradeJob:
+      enabled: true
 
   # ── Default alert rules ──────────────────────────────────────────────────
   defaultRules:
