@@ -16,4 +16,4 @@ spec:
         - name: monitoring-grafana-kube-pr-alertmanager
           port: 9093
   tls:
-    certResolver: wildcard-phink8s.com-tls
+    secretName: wildcard-phink8s.com-tls

@@ -13,4 +13,4 @@ spec:
         - name: monitoring-grafana
           port: 80
   tls:
-    certResolver: wildcard-phink8s.com-tls
+    secretName: wildcard-phink8s.com-tls

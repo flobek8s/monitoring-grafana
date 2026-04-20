@@ -16,4 +16,4 @@ spec:
         - name: monitoring-grafana-kube-pr-prometheus
           port: 9090
   tls:
-    certResolver: wildcard-phink8s.com-tls
+    secretName: wildcard-phink8s.com-tls
