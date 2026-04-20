@@ -9,9 +9,9 @@ spec:
   routes:
     - match: Host(`alertmanager.phink8s.com`)
       kind: Rule
-      middlewares:
-        - name: basic-auth-prometheus
-          namespace: monitoring-grafana
+      # middlewares:
+      #   - name: basic-auth-prometheus
+      #     namespace: monitoring-grafana
       services:
         - name: monitoring-grafana-kube-pr-alertmanager
           port: 9093

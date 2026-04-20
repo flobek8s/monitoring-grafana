@@ -9,9 +9,9 @@ spec:
   routes:
     - match: Host(`prom.phink8s.com`)
       kind: Rule
-      middlewares:
-        - name: basic-auth-prometheus   # see middleware below
-          namespace: monitoring-grafana
+      # middlewares:
+      #   - name: basic-auth-prometheus   # see middleware below
+      #     namespace: monitoring-grafana
       services:
         - name: monitoring-grafana-kube-pr-prometheus
           port: 9090
