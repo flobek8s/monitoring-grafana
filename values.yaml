@@ -111,7 +111,7 @@ kube-prometheus-stack:
           memory: 512Mi
         limits:
           cpu: 1000m
-          memory: 2Gi
+          memory: 1500Mi
 
       # Talos-specific: some paths differ
       # Uncomment if you want to scrape Talos API server metrics
