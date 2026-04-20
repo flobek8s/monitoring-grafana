@@ -203,6 +203,14 @@ kube-prometheus-stack:
     enabled: true
     upgradeJob:
       enabled: false
+      
+  prometheusOperator:
+    admissionWebhooks:
+      enabled: false
+      patch:
+        enabled: false
+    tls:
+      enabled: false
 
   # ── Default alert rules ──────────────────────────────────────────────────
   defaultRules:
