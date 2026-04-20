@@ -7,7 +7,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`prome.phink8s.com`)
+    - match: Host(`prom.phink8s.com`)
       kind: Rule
       middlewares:
         - name: basic-auth-prometheus   # see middleware below
