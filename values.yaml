@@ -157,7 +157,6 @@ kube-prometheus-stack:
     enabled: true
 
   prometheus-node-exporter:
-    namespaceOverride: monitoring
     # Talos mounts host paths differently — these tolerations ensure it runs on all nodes
     tolerations:
       - key: node-role.kubernetes.io/control-plane
@@ -171,7 +170,6 @@ kube-prometheus-stack:
 
   # ── kube-state-metrics ───────────────────────────────────────────────────
   kubeStateMetrics:
-    namespaceOverride: monitoring
     enabled: true
 
   # ── Talos-specific component toggles ─────────────────────────────────────
