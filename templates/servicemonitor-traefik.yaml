@@ -2,7 +2,7 @@ apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
   name: traefik
-  namespace: monitoring-grafana
+  namespace: monitoring
 spec:
   namespaceSelector:
     matchNames:

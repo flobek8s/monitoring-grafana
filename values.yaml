@@ -1,5 +1,5 @@
 kube-prometheus-stack:
-
+  namespaceOverride: monitoring
   # ── Grafana ──────────────────────────────────────────────────────────────
   grafana:
     enabled: true
