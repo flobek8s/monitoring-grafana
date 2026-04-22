@@ -23,7 +23,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "dfjm5g6i9v8xse"
+        "uid": "cfjuwguqgs4xsf"
       },
       "fieldConfig": {
         "defaults": {
@@ -111,7 +111,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "dfjm5g6i9v8xse"
+            "uid": "cfjuwguqgs4xsf"
           },
           "query": "from(bucket: \"mylivetemps\")\r\n  |> range(start: -12h)   // last 12 hours to be safe\r\n  |> filter(fn: (r) => r._measurement == \"temperature\")\r\n  |> filter(fn: (r) => r._field == \"fahrenheit\")\r\n  |> filter(fn: (r) => r.location == \"Water In\")\r\n  |> filter(fn: (r) => r.sensorid == \"000000b31eb6\")\r\n  |> last()",
           "refId": "A"
@@ -123,7 +123,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "dfjm5g6i9v8xse"
+        "uid": "cfjuwguqgs4xsf"
       },
       "fieldConfig": {
         "defaults": {
@@ -206,7 +206,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "dfjm5g6i9v8xse"
+            "uid": "cfjuwguqgs4xsf"
           },
           "query": "from(bucket: \"mylivetemps\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r._measurement == \"temperature\")\r\n  |> filter(fn: (r) => r._field == \"fahrenheit\")\r\n  |> filter(fn: (r) => r.location == \"Water In\")\r\n  |> filter(fn: (r) => r.sensorid == \"000000b31eb6\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean_temperature\")",
           "refId": "A"
@@ -218,7 +218,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "dfjm5g6i9v8xse"
+        "uid": "cfjuwguqgs4xsf"
       },
       "fieldConfig": {
         "defaults": {
@@ -301,7 +301,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "dfjm5g6i9v8xse"
+            "uid": "cfjuwguqgs4xsf"
           },
           "query": "from(bucket: \"mylivetemps\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r._measurement == \"temperature\")\r\n  |> filter(fn: (r) => r._field == \"fahrenheit\")\r\n  |> filter(fn: (r) => r.location == \"Water Out\")\r\n  |> filter(fn: (r) => r.sensorid == \"000000b285c3\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)",
           "refId": "A"
@@ -313,7 +313,7 @@
     {
       "datasource": {
         "type": "influxdb",
-        "uid": "dfjm5g6i9v8xse"
+        "uid": "cfjuwguqgs4xsf"
       },
       "fieldConfig": {
         "defaults": {
@@ -396,7 +396,7 @@
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "dfjm5g6i9v8xse"
+            "uid": "cfjuwguqgs4xsf"
           },
           "query": "from(bucket: \"mylivetemps\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r._measurement == \"temperature\")\r\n  |> filter(fn: (r) => r._field == \"fahrenheit\")\r\n  |> filter(fn: (r) => r.location == \"Water In\" or r.location == \"Water Out\")\r\n  |> filter(fn: (r) => r.sensorid == \"000000b31eb6\" or r.sensorid == \"000000b285c3\")\r\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\r\n  |> yield(name: \"mean_temperature\")",
           "refId": "A"
