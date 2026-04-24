@@ -30,7 +30,7 @@ data:
           },
           "targets": [
             {
-              "expr": "vpn_check_status",
+              "expr": "max(vpn_check_status)",
               "legendFormat": "VPN"
             }
           ]
@@ -51,7 +51,7 @@ data:
           },
           "targets": [
             {
-              "expr": "vpn_check_api_error",
+              "expr": "max(vpn_check_api_error)",
               "legendFormat": "VPN API"
             }
           ]
@@ -72,7 +72,7 @@ data:
           },
           "targets": [
             {
-              "expr": "vpn_check_public_ip_error",
+              "expr": "max(vpn_check_public_ip_error)",
               "legendFormat": "Public IP"
             }
           ]
@@ -98,7 +98,7 @@ data:
           },
           "targets": [
             {
-              "expr": "vpn_check_metrics_age_seconds",
+              "expr": "max(vpn_check_metrics_age_seconds)",
               "legendFormat": "Age"
             }
           ]
@@ -168,7 +168,7 @@ data:
           },
           "targets": [
             {
-              "expr": "vpn_check_status",
+              "expr": "max(vpn_check_status)",
               "legendFormat": "VPN Connected"
             }
           ]
@@ -186,7 +186,7 @@ data:
           },
           "targets": [
             {
-              "expr": "vpn_check_duration_seconds",
+              "expr": "max(vpn_check_duration_seconds)",
               "legendFormat": "Response Time"
             }
           ]
