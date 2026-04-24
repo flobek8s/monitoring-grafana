@@ -114,7 +114,7 @@ data:
           "transformations": [
             { "id": "labelsToFields", "options": {} },
             { "id": "organize", "options": {
-                "excludeByName": { "Time": true, "Value": true, "Value #A": true, "__name__": true, "container": true, "endpoint": true, "instance": true, "job": true, "namespace": true, "pod": true, "service": true },
+                "excludeByName": { "Time": true, "Value": true, "__name__": true, "container": true, "endpoint": true, "instance": true, "job": true, "namespace": true, "pod": true, "service": true },
                 "renameByName": { "address": "Public IP" }
               }
             }
@@ -138,7 +138,7 @@ data:
           "transformations": [
             { "id": "labelsToFields", "options": {} },
             { "id": "organize", "options": {
-                "excludeByName": { "Time": true, "Value": true, "Value #A": true, "__name__": true, "container": true, "endpoint": true, "instance": true, "job": true, "namespace": true, "pod": true, "service": true },
+                "excludeByName": { "Time": true, "Value": true, "__name__": true, "container": true, "endpoint": true, "instance": true, "job": true, "namespace": true, "pod": true, "service": true },
                 "renameByName": { "address": "VPN IP" }
               }
             }
