@@ -1,0 +1,191 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ip-check-grafana-dashboard
+  namespace: monitoring
+  labels:
+    grafana_dashboard: "1"
+data:
+  ip-check-dashboard.json: |
+    {
+      "title": "VPN Status",
+      "uid": "vpn-status",
+      "timezone": "browser",
+      "refresh": "5m",
+      "panels": [
+        {
+          "id": 1,
+          "type": "stat",
+          "title": "VPN Status",
+          "gridPos": { "x": 0, "y": 0, "w": 6, "h": 4 },
+          "options": {
+            "reduceOptions": { "calcs": ["lastNotNull"] },
+            "colorMode": "background",
+            "graphMode": "none",
+            "textMode": "value_and_name",
+            "mappings": [
+              { "type": "value", "options": { "0": { "text": "DISCONNECTED", "color": "red" } } },
+              { "type": "value", "options": { "1": { "text": "CONNECTED",    "color": "green" } } }
+            ]
+          },
+          "targets": [
+            {
+              "expr": "vpn_check_status",
+              "legendFormat": "VPN"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "type": "stat",
+          "title": "VPN Check API",
+          "gridPos": { "x": 6, "y": 0, "w": 6, "h": 4 },
+          "options": {
+            "reduceOptions": { "calcs": ["lastNotNull"] },
+            "colorMode": "background",
+            "graphMode": "none",
+            "mappings": [
+              { "type": "value", "options": { "0": { "text": "OK",    "color": "green" } } },
+              { "type": "value", "options": { "1": { "text": "ERROR", "color": "red" } } }
+            ]
+          },
+          "targets": [
+            {
+              "expr": "vpn_check_api_error",
+              "legendFormat": "VPN API"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "type": "stat",
+          "title": "Public IP Check",
+          "gridPos": { "x": 12, "y": 0, "w": 6, "h": 4 },
+          "options": {
+            "reduceOptions": { "calcs": ["lastNotNull"] },
+            "colorMode": "background",
+            "graphMode": "none",
+            "mappings": [
+              { "type": "value", "options": { "0": { "text": "OK",    "color": "green" } } },
+              { "type": "value", "options": { "1": { "text": "ERROR", "color": "red" } } }
+            ]
+          },
+          "targets": [
+            {
+              "expr": "vpn_check_public_ip_error",
+              "legendFormat": "Public IP"
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "type": "stat",
+          "title": "Metrics Age",
+          "gridPos": { "x": 18, "y": 0, "w": 6, "h": 4 },
+          "options": {
+            "reduceOptions": { "calcs": ["lastNotNull"] },
+            "colorMode": "background",
+            "graphMode": "none",
+            "unit": "s",
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                { "color": "green", "value": null },
+                { "color": "yellow", "value": 300 },
+                { "color": "red",    "value": 600 }
+              ]
+            }
+          },
+          "targets": [
+            {
+              "expr": "vpn_check_metrics_age_seconds",
+              "legendFormat": "Age"
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "type": "stat",
+          "title": "Public IP",
+          "gridPos": { "x": 0, "y": 4, "w": 12, "h": 4 },
+          "options": {
+            "reduceOptions": { "calcs": ["lastNotNull"] },
+            "colorMode": "none",
+            "graphMode": "none",
+            "textMode": "value"
+          },
+          "targets": [
+            {
+              "expr": "vpn_check_public_ip",
+              "legendFormat": "{{ address }}",
+              "instant": true
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "type": "stat",
+          "title": "VPN IP",
+          "gridPos": { "x": 12, "y": 4, "w": 12, "h": 4 },
+          "options": {
+            "reduceOptions": { "calcs": ["lastNotNull"] },
+            "colorMode": "none",
+            "graphMode": "none",
+            "textMode": "value"
+          },
+          "targets": [
+            {
+              "expr": "vpn_check_vpn_ip",
+              "legendFormat": "{{ address }}",
+              "instant": true
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "type": "timeseries",
+          "title": "VPN Status Over Time",
+          "gridPos": { "x": 0, "y": 8, "w": 24, "h": 8 },
+          "options": {
+            "legend": { "displayMode": "list", "placement": "bottom" }
+          },
+          "fieldConfig": {
+            "defaults": {
+              "custom": { "lineWidth": 2, "fillOpacity": 20 },
+              "mappings": [
+                { "type": "value", "options": { "0": { "text": "Down", "color": "red" } } },
+                { "type": "value", "options": { "1": { "text": "Up",   "color": "green" } } }
+              ],
+              "min": 0,
+              "max": 1
+            }
+          },
+          "targets": [
+            {
+              "expr": "vpn_check_status",
+              "legendFormat": "VPN Connected"
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "type": "timeseries",
+          "title": "VPN API Response Time",
+          "gridPos": { "x": 0, "y": 16, "w": 24, "h": 8 },
+          "fieldConfig": {
+            "defaults": {
+              "unit": "s",
+              "custom": { "lineWidth": 2, "fillOpacity": 10 }
+            }
+          },
+          "targets": [
+            {
+              "expr": "vpn_check_duration_seconds",
+              "legendFormat": "Response Time"
+            }
+          ]
+        }
+      ],
+      "schemaVersion": 36,
+      "version": 1
+    }
