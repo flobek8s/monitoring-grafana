@@ -117,7 +117,7 @@ data:
           "targets": [
             {
               "expr": "vpn_check_public_ip",
-              "legendFormat": "{{ address }}",
+              "legendFormat": "{{`{{ address }}`}}",
               "instant": true
             }
           ]
@@ -136,7 +136,7 @@ data:
           "targets": [
             {
               "expr": "vpn_check_vpn_ip",
-              "legendFormat": "{{ address }}",
+              "legendFormat": "{{`{{ address }}`}}",
               "instant": true
             }
           ]
