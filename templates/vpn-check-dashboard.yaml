@@ -127,19 +127,17 @@ data:
         },
         {
           "id": 8,
-          "type": "table",
+          "type": "stat",
           "title": "VPN IP",
           "gridPos": { "x": 12, "y": 4, "w": 12, "h": 4 },
           "options": {
-            "showHeader": true
+            "reduceOptions": { "calcs": ["lastNotNull"], "fields": "/^address$/" },
+            "colorMode": "none",
+            "graphMode": "none",
+            "textMode": "value"
           },
           "transformations": [
-            { "id": "labelsToFields", "options": {} },
-            { "id": "organize", "options": {
-                "excludeByName": { "Time": true, "Value": true, "__name__": true, "container": true, "endpoint": true, "instance": true, "job": true, "namespace": true, "pod": true, "service": true },
-                "renameByName": { "address": "VPN IP" }
-              }
-            }
+            { "id": "labelsToFields", "options": {} }
           ],
           "targets": [
             {
