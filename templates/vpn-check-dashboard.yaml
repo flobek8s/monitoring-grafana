@@ -105,39 +105,49 @@ data:
         },
         {
           "id": 7,
-          "type": "stat",
+          "type": "table",
           "title": "Public IP",
           "gridPos": { "x": 0, "y": 4, "w": 12, "h": 4 },
           "options": {
-            "reduceOptions": { "calcs": ["lastNotNull"] },
-            "colorMode": "none",
-            "graphMode": "none",
-            "textMode": "value"
+            "showHeader": true
           },
+          "transformations": [
+            { "id": "labelsToFields", "options": {} },
+            { "id": "organize", "options": {
+                "excludeByName": { "Time": true, "Value": true, "__name__": true, "container": true, "endpoint": true, "instance": true, "job": true, "namespace": true, "pod": true, "service": true },
+                "renameByName": { "address": "Public IP" }
+              }
+            }
+          ],
           "targets": [
             {
               "expr": "vpn_check_public_ip",
-              "legendFormat": "{{`{{ address }}`}}",
-              "instant": true
+              "instant": true,
+              "legendFormat": ""
             }
           ]
         },
         {
           "id": 8,
-          "type": "stat",
+          "type": "table",
           "title": "VPN IP",
           "gridPos": { "x": 12, "y": 4, "w": 12, "h": 4 },
           "options": {
-            "reduceOptions": { "calcs": ["lastNotNull"] },
-            "colorMode": "none",
-            "graphMode": "none",
-            "textMode": "value"
+            "showHeader": true
           },
+          "transformations": [
+            { "id": "labelsToFields", "options": {} },
+            { "id": "organize", "options": {
+                "excludeByName": { "Time": true, "Value": true, "__name__": true, "container": true, "endpoint": true, "instance": true, "job": true, "namespace": true, "pod": true, "service": true },
+                "renameByName": { "address": "VPN IP" }
+              }
+            }
+          ],
           "targets": [
             {
               "expr": "vpn_check_vpn_ip",
-              "legendFormat": "{{`{{ address }}`}}",
-              "instant": true
+              "instant": true,
+              "legendFormat": ""
             }
           ]
         },
