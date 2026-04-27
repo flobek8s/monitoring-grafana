@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: ip-check-grafana-dashboard
+  name: iptracker-grafana-dashboard
   namespace: monitoring
   labels:
     grafana_dashboard: "1"
 data:
-  ip-check-dashboard.json: |
+  iptracker-dashboard.json: |
     {
       "annotations": {
         "list": [
