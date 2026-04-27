@@ -32,10 +32,7 @@ data:
       "liveNow": false,
       "panels": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "description": "1 means the app can connect to MySQL",
           "fieldConfig": {
             "defaults": {
@@ -106,10 +103,7 @@ data:
           "type": "stat"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "description": "Total static IP records",
           "fieldConfig": {
             "defaults": {
@@ -154,10 +148,7 @@ data:
           "type": "stat"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "description": "Assigned static IP records",
           "fieldConfig": {
             "defaults": {
@@ -202,10 +193,7 @@ data:
           "type": "stat"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "description": "Unassigned static IP records",
           "fieldConfig": {
             "defaults": {
@@ -250,10 +238,7 @@ data:
           "type": "stat"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "description": "Total VPN devices from static and tracked sources",
           "fieldConfig": {
             "defaults": {
@@ -298,10 +283,7 @@ data:
           "type": "stat"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "description": "Tracked devices currently in DB",
           "fieldConfig": {
             "defaults": {
@@ -346,10 +328,7 @@ data:
           "type": "stat"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "description": "Configured static ranges",
           "fieldConfig": {
             "defaults": {
@@ -394,10 +373,7 @@ data:
           "type": "stat"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "description": "Trend of static IP usage over time",
           "fieldConfig": {
             "defaults": {
@@ -454,10 +430,7 @@ data:
           "type": "timeseries"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
-          },
+          "datasource": "Prometheus",
           "description": "VPN split by source",
           "fieldConfig": {
             "defaults": {
