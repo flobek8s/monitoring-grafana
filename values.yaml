@@ -92,7 +92,7 @@ kube-prometheus-stack:
               - ReadWriteOnce
             resources:
               requests:
-                storage: 10Gi
+                storage: 15Gi
 
       # Retention
       retention: 30d
