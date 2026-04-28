@@ -27,9 +27,7 @@ data:
       "editable": true,
       "fiscalYearStartMonth": 0,
       "graphTooltip": 0,
-      "id": null,
       "links": [],
-      "liveNow": false,
       "panels": [
         {
           "datasource": "Prometheus",
@@ -57,7 +55,7 @@ data:
                 "steps": [
                   {
                     "color": "red",
-                    "value": null
+                    "value": 0
                   },
                   {
                     "color": "green",
@@ -70,7 +68,7 @@ data:
             "overrides": []
           },
           "gridPos": {
-            "h": 5,
+            "h": 4,
             "w": 6,
             "x": 0,
             "y": 0
@@ -81,6 +79,7 @@ data:
             "graphMode": "none",
             "justifyMode": "center",
             "orientation": "horizontal",
+            "percentChangeColorMode": "standard",
             "reduceOptions": {
               "calcs": [
                 "lastNotNull"
@@ -88,12 +87,15 @@ data:
               "fields": "",
               "values": false
             },
-            "textMode": "value"
+            "showPercentChange": false,
+            "textMode": "value",
+            "wideLayout": true
           },
+          "pluginVersion": "12.4.3",
           "targets": [
             {
               "editorMode": "code",
-              "expr": "ip_tracker_up",
+              "expr": "max(ip_tracker_up)",
               "legendFormat": "",
               "range": true,
               "refId": "A"
@@ -110,13 +112,27 @@ data:
               "color": {
                 "mode": "palette-classic"
               },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": 0
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
               "unit": "none"
             },
             "overrides": []
           },
           "gridPos": {
-            "h": 5,
-            "w": 6,
+            "h": 4,
+            "w": 4,
             "x": 6,
             "y": 0
           },
@@ -126,6 +142,7 @@ data:
             "graphMode": "none",
             "justifyMode": "auto",
             "orientation": "auto",
+            "percentChangeColorMode": "standard",
             "reduceOptions": {
               "calcs": [
                 "lastNotNull"
@@ -133,12 +150,15 @@ data:
               "fields": "",
               "values": false
             },
-            "textMode": "value"
+            "showPercentChange": false,
+            "textMode": "value",
+            "wideLayout": true
           },
+          "pluginVersion": "12.4.3",
           "targets": [
             {
               "editorMode": "code",
-              "expr": "ip_tracker_static_ips_total",
+              "expr": "sum(ip_tracker_static_ips_total)",
               "legendFormat": "",
               "range": true,
               "refId": "A"
@@ -155,14 +175,28 @@ data:
               "color": {
                 "mode": "palette-classic"
               },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": 0
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
               "unit": "none"
             },
             "overrides": []
           },
           "gridPos": {
-            "h": 5,
-            "w": 6,
-            "x": 12,
+            "h": 4,
+            "w": 4,
+            "x": 10,
             "y": 0
           },
           "id": 3,
@@ -171,6 +205,7 @@ data:
             "graphMode": "none",
             "justifyMode": "auto",
             "orientation": "auto",
+            "percentChangeColorMode": "standard",
             "reduceOptions": {
               "calcs": [
                 "lastNotNull"
@@ -178,12 +213,15 @@ data:
               "fields": "",
               "values": false
             },
-            "textMode": "value"
+            "showPercentChange": false,
+            "textMode": "value",
+            "wideLayout": true
           },
+          "pluginVersion": "12.4.3",
           "targets": [
             {
               "editorMode": "code",
-              "expr": "ip_tracker_static_ips_assigned",
+              "expr": "sum(ip_tracker_static_ips_assigned)",
               "legendFormat": "",
               "range": true,
               "refId": "A"
@@ -200,14 +238,28 @@ data:
               "color": {
                 "mode": "palette-classic"
               },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": 0
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
               "unit": "none"
             },
             "overrides": []
           },
           "gridPos": {
-            "h": 5,
-            "w": 6,
-            "x": 18,
+            "h": 4,
+            "w": 4,
+            "x": 14,
             "y": 0
           },
           "id": 4,
@@ -216,6 +268,7 @@ data:
             "graphMode": "none",
             "justifyMode": "auto",
             "orientation": "auto",
+            "percentChangeColorMode": "standard",
             "reduceOptions": {
               "calcs": [
                 "lastNotNull"
@@ -223,12 +276,15 @@ data:
               "fields": "",
               "values": false
             },
-            "textMode": "value"
+            "showPercentChange": false,
+            "textMode": "value",
+            "wideLayout": true
           },
+          "pluginVersion": "12.4.3",
           "targets": [
             {
               "editorMode": "code",
-              "expr": "ip_tracker_static_ips_available",
+              "expr": "sum(ip_tracker_static_ips_available)",
               "legendFormat": "",
               "range": true,
               "refId": "A"
@@ -245,15 +301,29 @@ data:
               "color": {
                 "mode": "palette-classic"
               },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": 0
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
               "unit": "none"
             },
             "overrides": []
           },
           "gridPos": {
-            "h": 5,
-            "w": 8,
-            "x": 0,
-            "y": 5
+            "h": 4,
+            "w": 4,
+            "x": 18,
+            "y": 0
           },
           "id": 5,
           "options": {
@@ -261,6 +331,7 @@ data:
             "graphMode": "none",
             "justifyMode": "auto",
             "orientation": "auto",
+            "percentChangeColorMode": "standard",
             "reduceOptions": {
               "calcs": [
                 "lastNotNull"
@@ -268,12 +339,15 @@ data:
               "fields": "",
               "values": false
             },
-            "textMode": "value"
+            "showPercentChange": false,
+            "textMode": "value",
+            "wideLayout": true
           },
+          "pluginVersion": "12.4.3",
           "targets": [
             {
               "editorMode": "code",
-              "expr": "ip_tracker_vpn_devices_total",
+              "expr": "sum(ip_tracker_vpn_devices_total)",
               "legendFormat": "",
               "range": true,
               "refId": "A"
@@ -290,15 +364,29 @@ data:
               "color": {
                 "mode": "palette-classic"
               },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": 0
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
               "unit": "none"
             },
             "overrides": []
           },
           "gridPos": {
-            "h": 5,
-            "w": 8,
-            "x": 8,
-            "y": 5
+            "h": 4,
+            "w": 4,
+            "x": 0,
+            "y": 4
           },
           "id": 6,
           "options": {
@@ -306,6 +394,7 @@ data:
             "graphMode": "none",
             "justifyMode": "auto",
             "orientation": "auto",
+            "percentChangeColorMode": "standard",
             "reduceOptions": {
               "calcs": [
                 "lastNotNull"
@@ -313,12 +402,15 @@ data:
               "fields": "",
               "values": false
             },
-            "textMode": "value"
+            "showPercentChange": false,
+            "textMode": "value",
+            "wideLayout": true
           },
+          "pluginVersion": "12.4.3",
           "targets": [
             {
               "editorMode": "code",
-              "expr": "ip_tracker_tracked_devices_total",
+              "expr": "sum(ip_tracker_tracked_devices_total)",
               "legendFormat": "",
               "range": true,
               "refId": "A"
@@ -335,15 +427,29 @@ data:
               "color": {
                 "mode": "palette-classic"
               },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": 0
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
               "unit": "none"
             },
             "overrides": []
           },
           "gridPos": {
-            "h": 5,
-            "w": 8,
-            "x": 16,
-            "y": 5
+            "h": 4,
+            "w": 6,
+            "x": 4,
+            "y": 4
           },
           "id": 7,
           "options": {
@@ -351,6 +457,7 @@ data:
             "graphMode": "none",
             "justifyMode": "auto",
             "orientation": "auto",
+            "percentChangeColorMode": "standard",
             "reduceOptions": {
               "calcs": [
                 "lastNotNull"
@@ -358,12 +465,15 @@ data:
               "fields": "",
               "values": false
             },
-            "textMode": "value"
+            "showPercentChange": false,
+            "textMode": "value",
+            "wideLayout": true
           },
+          "pluginVersion": "12.4.3",
           "targets": [
             {
               "editorMode": "code",
-              "expr": "ip_tracker_network_ranges_total",
+              "expr": "sum(ip_tracker_network_ranges_total)",
               "legendFormat": "",
               "range": true,
               "refId": "A"
@@ -374,11 +484,185 @@ data:
         },
         {
           "datasource": "Prometheus",
+          "description": "Total Pi-hole DNS entries tracked",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": 0
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "none"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 5,
+            "x": 10,
+            "y": 4
+          },
+          "id": 11,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "none",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "value",
+            "wideLayout": true
+          },
+          "pluginVersion": "12.4.3",
+          "targets": [
+            {
+              "editorMode": "code",
+              "expr": "sum(ip_tracker_pihole_dns_entries_total)",
+              "legendFormat": "",
+              "range": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Pi-hole DNS Entries Total",
+          "type": "stat"
+        },
+        {
+          "datasource": "Prometheus",
+          "description": "Total Kubernetes ingress and Traefik route DNS records tracked",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": 0
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "none"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 4,
+            "w": 5,
+            "x": 15,
+            "y": 4
+          },
+          "id": 10,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "none",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "value",
+            "wideLayout": true
+          },
+          "pluginVersion": "12.4.3",
+          "targets": [
+            {
+              "editorMode": "code",
+              "expr": "sum(ip_tracker_k8s_ingress_dns_total)",
+              "legendFormat": "",
+              "range": true,
+              "refId": "A"
+            }
+          ],
+          "title": "K8s Ingress DNS Total",
+          "type": "stat"
+        },
+        {
+          "datasource": "Prometheus",
           "description": "Trend of static IP usage over time",
           "fieldConfig": {
             "defaults": {
               "color": {
                 "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "auto",
+                "showValues": false,
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": 0
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
               },
               "unit": "none"
             },
@@ -388,7 +672,7 @@ data:
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 10
+            "y": 8
           },
           "id": 8,
           "options": {
@@ -399,10 +683,12 @@ data:
               "showLegend": true
             },
             "tooltip": {
+              "hideZeros": false,
               "mode": "multi",
               "sort": "none"
             }
           },
+          "pluginVersion": "12.4.3",
           "targets": [
             {
               "editorMode": "code",
@@ -437,6 +723,54 @@ data:
               "color": {
                 "mode": "palette-classic"
               },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "auto",
+                "showValues": false,
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": 0
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
               "unit": "none"
             },
             "overrides": []
@@ -445,7 +779,7 @@ data:
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 10
+            "y": 8
           },
           "id": 9,
           "options": {
@@ -456,10 +790,12 @@ data:
               "showLegend": true
             },
             "tooltip": {
+              "hideZeros": false,
               "mode": "multi",
               "sort": "none"
             }
           },
+          "pluginVersion": "12.4.3",
           "targets": [
             {
               "editorMode": "code",
@@ -485,101 +821,11 @@ data:
           ],
           "title": "VPN Device Trend",
           "type": "timeseries"
-        },
-        {
-          "datasource": "Prometheus",
-          "description": "Total Kubernetes ingress and Traefik route DNS records tracked",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "unit": "none"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 5,
-            "w": 12,
-            "x": 0,
-            "y": 18
-          },
-          "id": 10,
-          "options": {
-            "colorMode": "value",
-            "graphMode": "none",
-            "justifyMode": "auto",
-            "orientation": "auto",
-            "reduceOptions": {
-              "calcs": [
-                "lastNotNull"
-              ],
-              "fields": "",
-              "values": false
-            },
-            "textMode": "value"
-          },
-          "targets": [
-            {
-              "editorMode": "code",
-              "expr": "ip_tracker_k8s_ingress_dns_total",
-              "legendFormat": "",
-              "range": true,
-              "refId": "A"
-            }
-          ],
-          "title": "K8s Ingress DNS Total",
-          "type": "stat"
-        },
-        {
-          "datasource": "Prometheus",
-          "description": "Total Pi-hole DNS entries tracked",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "unit": "none"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 5,
-            "w": 12,
-            "x": 12,
-            "y": 18
-          },
-          "id": 11,
-          "options": {
-            "colorMode": "value",
-            "graphMode": "none",
-            "justifyMode": "auto",
-            "orientation": "auto",
-            "reduceOptions": {
-              "calcs": [
-                "lastNotNull"
-              ],
-              "fields": "",
-              "values": false
-            },
-            "textMode": "value"
-          },
-          "targets": [
-            {
-              "editorMode": "code",
-              "expr": "ip_tracker_pihole_dns_entries_total",
-              "legendFormat": "",
-              "range": true,
-              "refId": "A"
-            }
-          ],
-          "title": "Pi-hole DNS Entries Total",
-          "type": "stat"
         }
       ],
+      "preload": false,
       "refresh": "15m",
-      "schemaVersion": 39,
-      "style": "dark",
+      "schemaVersion": 42,
       "tags": [
         "ip-tracker",
         "network",
@@ -593,9 +839,9 @@ data:
         "to": "now"
       },
       "timepicker": {},
-      "timezone": "",
+      "timezone": "browser",
       "title": "IP Tracker Overview",
       "uid": "ip-tracker-overview",
-      "version": 4,
+      "version": 6,
       "weekStart": ""
     }
