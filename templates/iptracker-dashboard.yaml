@@ -692,21 +692,21 @@ data:
           "targets": [
             {
               "editorMode": "code",
-              "expr": "ip_tracker_static_ips_total",
+              "expr": "max(ip_tracker_static_ips_total)",
               "legendFormat": "total",
               "range": true,
               "refId": "A"
             },
             {
               "editorMode": "code",
-              "expr": "ip_tracker_static_ips_assigned",
+              "expr": "max(ip_tracker_static_ips_assigned)",
               "legendFormat": "assigned",
               "range": true,
               "refId": "B"
             },
             {
               "editorMode": "code",
-              "expr": "ip_tracker_static_ips_available",
+              "expr": "max(ip_tracker_static_ips_available)",
               "legendFormat": "available",
               "range": true,
               "refId": "C"
@@ -799,21 +799,21 @@ data:
           "targets": [
             {
               "editorMode": "code",
-              "expr": "ip_tracker_static_ips_behind_vpn",
+              "expr": "max(ip_tracker_static_ips_behind_vpn)",
               "legendFormat": "static",
               "range": true,
               "refId": "A"
             },
             {
               "editorMode": "code",
-              "expr": "ip_tracker_tracked_devices_behind_vpn",
+              "expr": "max(ip_tracker_tracked_devices_behind_vpn)",
               "legendFormat": "tracked",
               "range": true,
               "refId": "B"
             },
             {
               "editorMode": "code",
-              "expr": "ip_tracker_vpn_devices_total",
+              "expr": "max(ip_tracker_vpn_devices_total)",
               "legendFormat": "total",
               "range": true,
               "refId": "C"
@@ -842,6 +842,6 @@ data:
       "timezone": "browser",
       "title": "IP Tracker Overview",
       "uid": "ip-tracker-overview",
-      "version": 6,
+      "version": 7,
       "weekStart": ""
     }
