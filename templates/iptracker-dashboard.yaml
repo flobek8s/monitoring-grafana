@@ -485,6 +485,96 @@ data:
           ],
           "title": "VPN Device Trend",
           "type": "timeseries"
+        },
+        {
+          "datasource": "Prometheus",
+          "description": "Total Kubernetes ingress and Traefik route DNS records tracked",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "unit": "none"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 5,
+            "w": 12,
+            "x": 0,
+            "y": 18
+          },
+          "id": 10,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "none",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "value"
+          },
+          "targets": [
+            {
+              "editorMode": "code",
+              "expr": "ip_tracker_k8s_ingress_dns_total",
+              "legendFormat": "",
+              "range": true,
+              "refId": "A"
+            }
+          ],
+          "title": "K8s Ingress DNS Total",
+          "type": "stat"
+        },
+        {
+          "datasource": "Prometheus",
+          "description": "Total Pi-hole DNS entries tracked",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "unit": "none"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 5,
+            "w": 12,
+            "x": 12,
+            "y": 18
+          },
+          "id": 11,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "none",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "textMode": "value"
+          },
+          "targets": [
+            {
+              "editorMode": "code",
+              "expr": "ip_tracker_pihole_dns_entries_total",
+              "legendFormat": "",
+              "range": true,
+              "refId": "A"
+            }
+          ],
+          "title": "Pi-hole DNS Entries Total",
+          "type": "stat"
         }
       ],
       "refresh": "15m",
@@ -506,6 +596,6 @@ data:
       "timezone": "",
       "title": "IP Tracker Overview",
       "uid": "ip-tracker-overview",
-      "version": 1,
+      "version": 2,
       "weekStart": ""
     }
