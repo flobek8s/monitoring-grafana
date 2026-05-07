@@ -6,6 +6,10 @@ kube-prometheus-stack:
     enabled: true
     replicas: 1
 
+    # Force old pod to terminate before new one starts (fixes ReadWriteOnce PVC conflicts)
+    strategy:
+      type: Recreate
+
     # Pull admin credentials from the SealedSecret
     admin:
       existingSecret: grafana-admin-secret
