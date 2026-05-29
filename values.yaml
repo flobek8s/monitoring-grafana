@@ -99,7 +99,7 @@ kube-prometheus-stack:
                 storage: 15Gi
 
       # Retention
-      retention: 15d
+      retention: 7d
       retentionSize: "7GB"
 
       scrapeInterval: "60s"
