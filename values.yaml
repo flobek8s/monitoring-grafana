@@ -90,16 +90,13 @@ kube-prometheus-stack:
       # Longhorn persistent storage
       storageSpec:
         volumeClaimTemplate:
-          metadata:
-            annotations:
-              longhorn.io/number-of-replicas: "1"
           spec:
             storageClassName: longhorn
             accessModes:
               - ReadWriteOnce
             resources:
               requests:
-                storage: 15Gi
+                storage: 8Gi
 
       # Retention
       retention: 7d

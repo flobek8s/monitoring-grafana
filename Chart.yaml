@@ -2,8 +2,8 @@ apiVersion: v2
 name: monitoring
 description: Prometheus + Grafana monitoring stack
 type: application
-version: 1.0.5
-appVersion: "1.0.5"
+version: 1.0.6
+appVersion: "1.0.6"
 
 dependencies:
   - name: kube-prometheus-stack
