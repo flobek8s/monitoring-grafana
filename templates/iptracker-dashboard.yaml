@@ -835,13 +835,13 @@ data:
         "list": []
       },
       "time": {
-        "from": "now-30d",
+        "from": "now-2d",
         "to": "now"
       },
       "timepicker": {},
       "timezone": "browser",
       "title": "IP Tracker Overview",
       "uid": "ip-tracker-overview",
-      "version": 7,
+      "version": 8,
       "weekStart": ""
     }
