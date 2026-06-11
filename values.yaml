@@ -96,11 +96,11 @@ kube-prometheus-stack:
               - ReadWriteOnce
             resources:
               requests:
-                storage: 8Gi
+                storage: 30Gi
 
       # Retention
-      retention: 7d
-      retentionSize: "7GB"
+      retention: 30d
+      retentionSize: "20GB"
 
       scrapeInterval: "60s"
       evaluationInterval: "60s"
